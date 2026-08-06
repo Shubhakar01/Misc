@@ -1,0 +1,4 @@
+Interpreter cannot run programs
+Higher order function
+
+'is' keyword is all about identity
