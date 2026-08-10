@@ -2,3 +2,13 @@ Interpreter cannot run programs
 Higher order function
 
 'is' keyword is all about identity
+
+UPI Handle
+Collection, Functions, Procedure
+Data Representation - Tuple
+Person - UPI ID : 1 to Many relationship
+
+Signature of Function(Name, parameter, return):
+create_handle(ID:str,bank_ID:str)
+delete_handle  
+read_handle(UPIhandle) -> String
