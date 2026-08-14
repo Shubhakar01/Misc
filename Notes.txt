@@ -12,3 +12,254 @@ Signature of Function(Name, parameter, return):
 create_handle(ID:str,bank_ID:str)
 delete_handle  
 read_handle(UPIhandle) -> String
+
+Skip to main content
+
+
+Skip to Main Content
+IEEE.org
+IEEE Xplore
+IEEE SA
+IEEE Spectrum
+More Sites
+Donate
+Cart
+Create Account
+Personal Sign In
+IEEE Xplore logo - Link to home
+Browse 
+My Settings 
+Help 
+MANIPAL INSTITUTE OF TECHNOLOGY logo
+Access provided by:
+MANIPAL INSTITUTE OF TECHNOLOGY
+Sign Out
+IEEE logo - Link to IEEE main site homepage
+Search by Content Type
+
+All
+
+ADVANCED SEARCH
+Conferences >2026 Fourth International Con...
+Stock Trend Prediction Using Explainable AI
+Publisher: IEEE
+Cite This
+PDF
+Siona Raj; Sanitha Michail C.; Rashmi M. R.; Hoong Pin Lee
+All Authors
+
+41
+Full
+Text Views
+
+Abstract
+Document Sections
+I.
+Introduction
+II.
+Literature Review
+III.
+Proposed Methodology
+IV.
+Results and Discussions
+V.
+Conclusion and Future Work
+Authors
+Figures
+References
+Keywords
+Metrics
+Abstract:
+The aim of this paper is to propose a method to forecast the stock market price with the help of machine learning models and tools. Long Short-Term Memory (LSTM) and Linear Regression are the two models used in the paper for the analysis of stock prices. Exponential Moving Average (EMA), Moving Average Convergence Divergence (MACD) and Relative Strength Index (RSI) are the technical indicators used as inputs. Explainable AI (SHapley Additive exPlanations) is used to understand the influence of each feature on the predictions. Streamlit dashboard helps to visualize the stock market predictions. Results shows that Linear Regression follows the overall trend of stock prices with small errors whereas Long Short-Term Memory (LSTM) is capable of capturing the ups and downs of the stock market more effectively. Therefore, findings suggests that simple methods perform better on structured data where as models designed for time-dependent data works well for detecting market shifts.
+Published in: 2026 Fourth International Conference on Augmented Intelligence and Sustainable Systems (ICAISS)
+Date of Conference: 28-30 April 2026
+Date Added to IEEE Xplore: 26 May 2026
+ISBN Information:
+DOI: 10.1109/ICAISS68683.2026.11526191
+Publisher: IEEE
+Conference Location: Trichy, India
+Recommended for You (Beta)
+AI Revolution Driven by Memory Technology Innovation
+Revolutionizing Electronics and Telecommunication: The Impact of AI and Machine Learning
+Design of Deepseek Big Model Intelligent Voice Assistant Based on ESP32 Microcontroller
+Learn More
+SECTION I.Introduction
+Behavior of stock market is very complicated. Various factors influence the stock market in a complex way. It gets influenced by technical elements and economic factors. Stock market tends to swift rapidly and makes it difficult to predict. Linear Regression, one of the traditional methods, is capable of finding simple relationships. But it often fails when the stock market shifts suddenly or shows the patterns based on long term relationships.
+
+Deep learning models like LSTM is capable of meeting the challenges of time-based stock data. It can capture the longterm relationships and predict the stock data more effectively. These models are often complex in nature and difficult to understand. This reduces the transparency of the model. Explainable Artificial Intelligence (XAI) like SHAP (SHapley Additive explanations) helps the user to understand the model easily. SHAP assigns a score to each feature and importance of each feature on the predictions can be obtained from this score. This helps traders and analysts to understand the model and the predictions easily.
+
+SECTION II.Literature Review
+Earlier traditional methods based on time-series techniques like ARIMA and exponential smoothing [1],[8] were used for stock market forecasting. These methods were effective if the data set is having a simple, steady and linear patterns. But these methods often failed if the pattern is complicated or having time dependent behavior or market shifts rapidly. Later machine learning models such as Support Vector Machines (SVM), Random Forests and Gradient Boosting [2],[12] started becoming popular among analysts. These models were capable to handle non-linear relationships and helped to predict the results accurately. Even though, these models struggled to learn long-term dependency in the data.
+
+Recent research papers highlighted that deep learning models like Long Short-Trem Memory (LSTM) [3],[7],[15] are efficient in capturing the long-term relationships. They can predict the complex patterns and stock market movements effectively. Researchers have combined Convolutional Neural Networks (CNNs) with LSTMs as in [5 &6] for identifying the market trend and meaningful stock market forecasting. Results from [3],[11] demonstrates that LSTM models performs better than Feedforward networks and Decision Trees when technical indicators like RSI, EMA and MACD are included.
+
+Linear Regression model can still be a base model for stock prediction especially when inputs are selected [2],[4] carefully. Researches show that sequence-based model along with Linear Regression brings proper balance and accurate prediction. Multiple Linear Regression has been a good option for Indian stock market. Similar results were obtained in [9],[11] for mobile based financial applications.
+
+Deep learning models are gaining more popularity. Users find these model predictions trustworthy as they are transparent and easy to understand. SHAP analysis quantify the importance of each feature to their predictions as discussed in [10],[13]. SHAP analysis works well with both linear and non-linear models. Integrating SHAP with LSTM or CNN models as suggested in [4],[5] gives an overall insight about the local and global financial market. This helps traders and analysts to validate and interpret the model predictions effectively.
+
+Hybrid models are capable to handle long-term trends in the market and adapt easily to its changing conditions. Recent researches focus on combining Explainable Artificial Intelligence with the technical indicators [6],[14] to provide a better visualization about the model predictions. In [15] suggests that adding sentiment analysis prediction accuracy can be improved.
+
+SECTION III.Proposed Methodology
+This paper is organized into six stages for the prediction of stock trend in the market. It starts with collection of required data for the forecast. Followed by feature preparation, building the model, assessment of performance of the model, explanation of model's behavior and finally visualization of the results. A brief description about each stage is given below.
+
+A. Data Collection
+The information about the historical data related to stock market, during the period of 2015-2024, was collected with the help of Yahoo Finance API. Daily records like opening, lowest, highest, closing prices and market volume of each stock were included in the dataset. Apple Inc.(AAPL) was used as the primary stock model for training and testing. These stocks were chosen due to their availability of uninterrupted historical data and market capitalization.
+
+B. Feature Engineering
+Few technical indicators were generated with the help of Technical Analysis (TA) library. TA library includes many indicators which are useful for the financial and stock market analysis. This helps to get better insights about the market trends. Following indicators were used for the proposed method.
+
+Relative Strength Index (RSI)
+
+Moving Average Convergence Divergence (MACD)
+
+Exponential Moving Average (EMA)
+
+Relative Strength Index helped to understand about the momentum of the market. Moving Average Convergence Divergence gave the hint about the stock market trend shift. Exponential Moving Average was incorporated to reduce the disturbance in the daily stock market price data. Short term fluctuations in the market would not dominate the analysis if EMA is included in the models. The above three indicators were used as features in the proposed method to train the Linear Regression and LSTM models.
+
+Before training, all input features were scaled to a range of 0 to 1 using Min-Max normalization. The scaling values were calculated using only the training data. The same scaling parameters were applied to validation and test data. This avoided data leakage.
+
+C. Model Development
+Two models were implemented in the proposed study for comparison. They are Linear Regression and Long ShortTerm Memory (LSTM).
+
+Linear Regression:
+Technical indicators were used to develop the Linear Regression model to predict the closing prices of the stock market. Linear Regression model has got minimal and simple design structure. This helps the user to understand the model easily and interpret how each and every input factor influences its output. It also helps the analysts to identify the particular indicator that play the significant role in the stock market forecast.
+
+Long Short-Term Memory (LSTM):
+Keras is an application programming interface and TensorFlow is an open-source library for artificial intelligence. TensorFlow and Keras are used to develop the LSTM model. This model is trained to recognize the patterns and predict the stock market prices. It uses different types of indicators like Relative Strength Index, Moving Average Convergence Divergence, Exponential Moving Average and closing prices to process the data through 100 -time steps window. LSTM model uses the fluctuations and trends in the market to predict the stock prices. It stores the useful information from past data and adjusts itself to fit into the new market pattern. This feature makes LSTM model useful for time series predictions.
+
+The input window of 100 time steps was selected to allow the LSTM model to learn medium-term trends in stock prices. Experiments with different sizes revealed that this setting yielded the most stable training and validation performance.
+
+D. Evaluation Metrics
+Model evaluation was performed using a chronological data split. The first 70% was used for training and the remaining 30% was used as an unseen test period. All reported metrics were computed using the unseen data.
+
+The following metrices were used to measure the accuracy of the models:
+
+Mean Squared Error (MSE)
+
+Root Mean Squared Error (RMSE)
+
+Mean Absolute Error (MAE)
+
+Coefficient of determination (R2)
+
+These metrics determine the accuracy of model by calculating the difference between the actual and predicted values. They can assess the ability of the model to capture the data patterns.
+
+E. ExplainableAI(XAI)
+SHAP helps the user to understand and interpret the predictions made by the models.
+
+Global SHAP
+
+Global SHAP values indicate the features which are important for the complete dataset.
+
+Local SHAP
+
+Local SHAP value helps to understand the relation between every individual feature towards the specific prediction. It also helps to interpret the model output easily. User will be capable to find the reason behind each and every result.
+
+F. Visualization and Deployment
+An open-source web application, Streamlit, has been used in the paper to visualize the results more clearly. It allows the user to compare the data predictions easily. User can check the stock market data quickly and understand how individual feature is related to its output. It allows the user to select a specific sample and study about it in detail. This interactive Streamlit dashboard helps the user to understand the behavior of the model more easily even in real time applications.Fig. 1 represents the block diagram of the proposed model.
+
+SECTION IV.Results and Discussions
+The performance of both the models used in the paper, Linear Regression and LSTM, was evaluated using stock data from 2015 to 2024. Different performance evaluation parameters were used to analyze the results. Visualization tool was used to identify the trends in the market data and understand how each model has explained its outputs.
+
+Table I. Quantitative evaluation of the models
+Table I.- Quantitative evaluation of the models
+
+A. Linear Regression Results
+Even though Linear Regression model has a simple design, results have proved that it is capable of providing consistent predictions. Fig. 2 shows the comparison between actual and predicted closing prices using this model. The results suggest that it follows the overall trend of stock prices with only small errors.
+
+The Global SHAP shows how each feature contributed to the predictions. Among all features, RSI had the most significant impact on predictions, followed by MACD and EMA. This analysis helps explain how the technical indicators affect the model's output and adds transparency to the results.
+
+B. LSTM Results
+In this paper LSTM model was developed to understand the sequential patterns in stock market data. The predictions made by the model closely followed the general movement and fluctuations of stock prices. The comparison between the actual and predicted values as shown in Fig 3. indicates that LSTM model can identify complex variations more effectively than Linear Regression model. Detailed performance comparison of both the models is given in TABLE I.
+
+Even though the numerical errors of LSTM model are higher than the Linear Regression model, higher R2 value indicates that it is capable of capturing the variations in stock data more efficiently. The SHAP analysis illustrated in Fig. 4 gives a clearer picture of how each input feature influences the specific predictions. The approach as proposed in the paper improves the transparency of the model. It allows the users to understand the reason behind the outputs even if the structure is complex.
+
+C. Model Comparison
+From the results of the proposed model Linear Regression gives smaller numeric errors and gives a clear idea about the importance of individual feature towards the prediction. But LSTM model is better in identifying the time-based patterns and variations in the stock data. This highlights a balance between the simplicity of Linear Regression and the capacity of LSTM to capture more complex relationships. Linear Regression generally gives better results when the dataset is structured and features are carefully selected. LSTM adapts better to shifting market behaviors. Both the models will be more understandable when SHAP values are used alongside. It gives a clear idea about the importance of each input towards the data output. User experience can be improved by using Streamlit dashboard for the comparison of models and reveals the influence of feature in real time.
+
+The Linear Regression model analyzed in the paper showed lower MSE and RMSE values and these results align with those proposed in [2] and [10]. Prediction accuracy is improved with the help of well-designed indicators. LSTM model achieved a higher R2 value and it supports the finding of [3], [4] and [5]. This proofs that the deep learning models can handle the sequential data more effectively. SHAP analysis proposed in the model reveals that explainable AI techniques can contribute transparency to the model.
+
+This work proposes that using SHAP across both linear and sequential models within a single framework can connect model interpretability with real-world application. The Linear Regression approach offers dependable and easy-to-understand predictions whereas LSTM model excels at identifying timedependent data patterns. SHAP and the Streamlit interface improves the clarity of the model and gives the user a better experience. This makes the overall system more practical and informative for analysts.
+
+Fig. 1. - Flow diagram of the proposed methodology
+
+Fig. 1.
+Flow diagram of the proposed methodology
+
+Show All
+
+Fig. 2. - Comparison between the actual closing prices and predicted closing price using linear regression
+
+Fig. 2.
+Comparison between the actual closing prices and predicted closing price using linear regression
+
+Show All
+
+Fig. 3. - Comparison between the actual closing prices and predicted closing price using LSTM
+
+Fig. 3.
+Comparison between the actual closing prices and predicted closing price using LSTM
+
+Show All
+
+Fig. 4. - SHAP analysis of the models
+
+Fig. 4.
+SHAP analysis of the models
+
+Show All
+
+SECTION V.Conclusion and Future Work
+Two models, Linear Regression and LSTM, were used in this paper to assess their ability to predict the future stock prices. SHAP-based Explainable AI (XAI) was employed to illustrate how different input features contribute to predictions and model outcomes. The Linear Regression model produced accurate stock forecasts which confirms that simpler models can perform effectively when the dataset is well-organized and the features are thoughtfully designed. This approach clearly shows the influence of technical indicators on the predicted results. LSTM model identified the time-dependent data patterns to handle the complex and shifting market behaviors. SHAP analysis has used RSI, MACD and EMA for overall predictions. Streamlit dashboard helps the user to compare model outcomes and understand the influence of features in real time. Therefore, the analysis method proposed in the paper increases the transparency and offers valuable insights for analysts and traders for the stock data forecast. Researchers can extend the work to incorporate Transformer-based models to understand long-term dependencies in financial market data and add sentimental information from social media to improve the accuracy of predictions. The analysts, traders and researchers can access real time financial forecasting data if the proposed system is implemented as a cloud-based application.
+
+
+Authors
+
+Figures
+
+References
+
+Keywords
+
+Metrics
+  Back to Results   |   Next > 
+
+More Like This
+Stock Market Analysis using Long Short-Term Memory(LSTM) and linear regression Machine Learning Model
+2023 IEEE 7th Conference on Information and Communication Technology (CICT)
+
+Published: 2023
+
+Exploratory Data Analysis and Machine Learning-based Predictive Modeling for Stock Market Forecasting
+2026 9th International Conference on Computing Methodologies and Communication (ICCMC)
+
+Published: 2026
+
+Show More
+
+References
+
+References is not available for this document.
+IEEE Personal Account
+Change username/password
+Purchase Details
+Payment Options
+View Purchased Documents
+Profile Information
+Communications Preferences
+Profession and Education
+Technical interests
+Need Help?
+US & Canada: +1 800 678 4333
+Worldwide: +1 732 981 0060
+Contact & Support
+Follow
+About IEEE Xplore | Contact Us | Help | Accessibility | Terms of Use | Nondiscrimination Policy | IEEE Ethics Reporting | Sitemap | IEEE Privacy Policy
+
+A public charity, IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity.
+
+© Copyright 2026 IEEE - All rights reserved, including rights for text and data mining and training of artificial intelligence and similar technologies.
+
+
+PDF
+Help
